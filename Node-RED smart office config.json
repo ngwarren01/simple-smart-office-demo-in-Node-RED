@@ -1,0 +1,4058 @@
+[
+    {
+        "id": "f475c7a808df344d",
+        "type": "tab",
+        "label": "Obtaining data from MQTT into InfluxDB",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "202976c241e2145d",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "96192caac7bb71e0",
+        "type": "tab",
+        "label": "Telegram",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2dd4a84d1e53452d",
+        "type": "mqtt-broker",
+        "name": "UCCN2513",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "950a3ae9e9053409",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "595fcb68b4e07c2e",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "ac070757315e3026",
+        "type": "ui_group",
+        "name": "Pressure",
+        "tab": "cbb0b8605c0dd467",
+        "order": 4,
+        "disp": true,
+        "width": 7,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "cbb0b8605c0dd467",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3aa1be73a97d4877",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "0810aaf6878e53a7",
+        "type": "telegram bot",
+        "botname": "warren0813_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "31bcb4682d4c8ae2",
+        "type": "ui_group",
+        "name": "Daily Update",
+        "tab": "cbb0b8605c0dd467",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2a361a2954052bee",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "cbb0b8605c0dd467",
+        "order": 3,
+        "disp": true,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b22d8c0afefe34ae",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "cbb0b8605c0dd467",
+        "order": 2,
+        "disp": true,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0d928377348e2807",
+        "type": "noraf-config",
+        "name": "nora config",
+        "group": "",
+        "twofactor": "off",
+        "twofactorpin": "",
+        "localexecution": true,
+        "structure": "",
+        "storeStateInContext": false,
+        "disableValidationErrors": false
+    },
+    {
+        "id": "2016e05cd883db43",
+        "type": "ui_group",
+        "name": "Switch",
+        "tab": "cbb0b8605c0dd467",
+        "order": 5,
+        "disp": true,
+        "width": 5,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ca559d101a4e89f4",
+        "type": "ui_spacer",
+        "z": "202976c241e2145d",
+        "name": "spacer",
+        "group": "31bcb4682d4c8ae2",
+        "order": 3,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "43126e3e4a13294d",
+        "type": "ui_spacer",
+        "z": "202976c241e2145d",
+        "name": "spacer",
+        "group": "31bcb4682d4c8ae2",
+        "order": 5,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "63b9d691145c5138",
+        "type": "ui_spacer",
+        "z": "202976c241e2145d",
+        "name": "spacer",
+        "group": "31bcb4682d4c8ae2",
+        "order": 6,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "874d7c6d990ed909",
+        "type": "ui_spacer",
+        "z": "202976c241e2145d",
+        "name": "spacer",
+        "group": "31bcb4682d4c8ae2",
+        "order": 7,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "5fa9f14371eb8a47",
+        "type": "ui_spacer",
+        "z": "202976c241e2145d",
+        "name": "spacer",
+        "group": "2016e05cd883db43",
+        "order": 7,
+        "width": "5",
+        "height": "1"
+    },
+    {
+        "id": "70170a5d2f17d7a6",
+        "type": "ui_spacer",
+        "z": "202976c241e2145d",
+        "name": "spacer",
+        "group": "2016e05cd883db43",
+        "order": 10,
+        "width": "5",
+        "height": "4"
+    },
+    {
+        "id": "bf14694fe646eeaa",
+        "type": "mqtt in",
+        "z": "f475c7a808df344d",
+        "name": "",
+        "topic": "1903437/mypi/encrypted_data",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "950a3ae9e9053409",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 300,
+        "wires": [
+            [
+                "6a79ae191638ad28",
+                "e83dc2ccdc2e3745"
+            ]
+        ]
+    },
+    {
+        "id": "6a79ae191638ad28",
+        "type": "debug",
+        "z": "f475c7a808df344d",
+        "name": "debug for incoming mqtt data (encrypted)",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2ee418ee7845929a",
+        "type": "json",
+        "z": "f475c7a808df344d",
+        "name": "JSON",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 590,
+        "y": 400,
+        "wires": [
+            [
+                "ce25846804974b7c"
+            ]
+        ]
+    },
+    {
+        "id": "ce25846804974b7c",
+        "type": "function",
+        "z": "f475c7a808df344d",
+        "name": "Retrieve data from JSON object",
+        "func": "msg.payload = {temperature:msg.payload.temp, \n               pressure:msg.payload.pres, \n               humidity:msg.payload.humi,};\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 400,
+        "wires": [
+            [
+                "c00d90f22873a71b",
+                "349985be398ff4f0"
+            ]
+        ]
+    },
+    {
+        "id": "c00d90f22873a71b",
+        "type": "debug",
+        "z": "f475c7a808df344d",
+        "name": "debug for data passing to InfluxDB",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "349985be398ff4f0",
+        "type": "influxdb out",
+        "z": "f475c7a808df344d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "InfluxDB IN",
+        "measurement": "location=office",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "FICT",
+        "bucket": "db01",
+        "x": 1110,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e83dc2ccdc2e3745",
+        "type": "decryptor",
+        "z": "f475c7a808df344d",
+        "name": "AES-256 decryption",
+        "cryptoPassword": "HelloWorld",
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "2ee418ee7845929a",
+                "8c83a116a1a69976"
+            ]
+        ]
+    },
+    {
+        "id": "8c83a116a1a69976",
+        "type": "debug",
+        "z": "f475c7a808df344d",
+        "name": "debug for decrypted msg",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "4f2ee3f1e1cc7c2b",
+        "type": "comment",
+        "z": "f475c7a808df344d",
+        "name": "Passing data from MQTT into InfluxDB",
+        "info": "",
+        "x": 270,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "c69841349c1c3019",
+        "type": "ui_switch",
+        "z": "202976c241e2145d",
+        "name": "",
+        "label": "Lights ",
+        "tooltip": "",
+        "group": "2016e05cd883db43",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "07_on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "07_off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 170,
+        "y": 1740,
+        "wires": [
+            [
+                "b832b9a3d24936b2"
+            ]
+        ]
+    },
+    {
+        "id": "b832b9a3d24936b2",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\"+msg.payload+\"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1740,
+        "wires": [
+            [
+                "86d1e270dba98252"
+            ]
+        ]
+    },
+    {
+        "id": "86d1e270dba98252",
+        "type": "json",
+        "z": "202976c241e2145d",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 690,
+        "y": 1920,
+        "wires": [
+            [
+                "4bc0cbc348832f69"
+            ]
+        ]
+    },
+    {
+        "id": "4bc0cbc348832f69",
+        "type": "mqtt out",
+        "z": "202976c241e2145d",
+        "name": "",
+        "topic": "1903437/mypi/topic2",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "950a3ae9e9053409",
+        "x": 900,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "8071df30c6cb7d82",
+        "type": "inject",
+        "z": "202976c241e2145d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "957296760fdd8068",
+                "42ef1fd40ee08087",
+                "1d3a245730a73834",
+                "3af46546254aed5e",
+                "97daadff65d838d6",
+                "1ee92bb2b76aac64",
+                "bb42b39c27215427",
+                "5dbfc50840737cec",
+                "0d1f72833bac6eec"
+            ]
+        ]
+    },
+    {
+        "id": "957296760fdd8068",
+        "type": "influxdb in",
+        "z": "202976c241e2145d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Last Value (Temperature)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -1h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"temperature\"\n  )\n  |> last(column: \"_time\")\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 610,
+        "y": 120,
+        "wires": [
+            [
+                "df6aa94275a4cccc"
+            ]
+        ]
+    },
+    {
+        "id": "df6aa94275a4cccc",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "msg.payload = msg.payload[0]._value;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 120,
+        "wires": [
+            [
+                "6c628ae01342891b"
+            ]
+        ]
+    },
+    {
+        "id": "6c628ae01342891b",
+        "type": "ui_gauge",
+        "z": "202976c241e2145d",
+        "name": "Temperature Gauge",
+        "group": "b22d8c0afefe34ae",
+        "order": 1,
+        "width": 7,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "Degree Celsius (°C)",
+        "format": "{{msg.payload}}",
+        "min": "-10",
+        "max": "90",
+        "colors": [
+            "#001be6",
+            "#1be600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "50",
+        "className": "",
+        "x": 1140,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "42ef1fd40ee08087",
+        "type": "influxdb in",
+        "z": "202976c241e2145d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Query-30m (Temp)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -30m)\n  |> timeShift(duration: 8h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"temperature\"\n  )\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 590,
+        "y": 340,
+        "wires": [
+            [
+                "3a6c6c71a8df4380"
+            ]
+        ]
+    },
+    {
+        "id": "3a6c6c71a8df4380",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "let dataC = [[]];\nlet dataLabels = [];\n\nfor (let X in msg.payload) \n{\n    dataLabels[X] = msg.payload[X]._time;\n    dataC[0][X] = msg.payload[X]._value;\n}\n\nvar m={\n    \"series\":[\"Temperature\"],\n    \"data\":dataC,\n    \"labels\":dataLabels\n};\n\nreturn {payload:[m]};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 340,
+        "wires": [
+            [
+                "924ee3ec0a930628"
+            ]
+        ]
+    },
+    {
+        "id": "1d3a245730a73834",
+        "type": "influxdb in",
+        "z": "202976c241e2145d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Query Descending (Temperature)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -5m)\n  |> timeShift(duration: 8h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"temperature\"\n  )\n  |> sort(columns: [\"_time\"], desc: true)\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 630,
+        "y": 580,
+        "wires": [
+            [
+                "a5f113f81c72a7ff",
+                "559f8cfdc7f6a9ec"
+            ]
+        ]
+    },
+    {
+        "id": "a5f113f81c72a7ff",
+        "type": "ui_table",
+        "z": "202976c241e2145d",
+        "group": "b22d8c0afefe34ae",
+        "name": "Temperature Table (Desc Order)",
+        "order": 4,
+        "width": 7,
+        "height": 9,
+        "columns": [
+            {
+                "field": "_time",
+                "title": "Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "_value",
+                "title": "Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1010,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "eab9e9beb98851c2",
+        "type": "inject",
+        "z": "202976c241e2145d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "7200",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 1100,
+        "wires": [
+            [
+                "301d4d74435f859c"
+            ]
+        ]
+    },
+    {
+        "id": "301d4d74435f859c",
+        "type": "http request",
+        "z": "202976c241e2145d",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.worldometers.info/coronavirus/country/malaysia/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 1100,
+        "wires": [
+            [
+                "aa1dc9ce138796b4",
+                "2b7a5d8f387a2590",
+                "c4e636022cfaea9a"
+            ]
+        ]
+    },
+    {
+        "id": "aa1dc9ce138796b4",
+        "type": "html",
+        "z": "202976c241e2145d",
+        "name": "",
+        "property": "payload",
+        "outproperty": "payload",
+        "tag": "title",
+        "ret": "text",
+        "as": "single",
+        "x": 590,
+        "y": 1060,
+        "wires": [
+            [
+                "5fc744df3c520e05"
+            ]
+        ]
+    },
+    {
+        "id": "2b7a5d8f387a2590",
+        "type": "html",
+        "z": "202976c241e2145d",
+        "name": "",
+        "property": "payload",
+        "outproperty": "payload",
+        "tag": "div>h4",
+        "ret": "html",
+        "as": "single",
+        "x": 590,
+        "y": 1120,
+        "wires": [
+            [
+                "5fc744df3c520e05"
+            ]
+        ]
+    },
+    {
+        "id": "c4e636022cfaea9a",
+        "type": "html",
+        "z": "202976c241e2145d",
+        "name": "",
+        "property": "payload",
+        "outproperty": "payload",
+        "tag": "ul>li>strong",
+        "ret": "html",
+        "as": "single",
+        "x": 610,
+        "y": 1180,
+        "wires": [
+            [
+                "5fc744df3c520e05"
+            ]
+        ]
+    },
+    {
+        "id": "5fc744df3c520e05",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "function 1",
+        "func": "msg.payload = msg.payload[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 1120,
+        "wires": [
+            [
+                "d51666a76feead86"
+            ]
+        ]
+    },
+    {
+        "id": "d51666a76feead86",
+        "type": "join",
+        "z": "202976c241e2145d",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 970,
+        "y": 1120,
+        "wires": [
+            [
+                "84c1cb3c127f5a6d",
+                "961d84fe997d7e97"
+            ]
+        ]
+    },
+    {
+        "id": "84c1cb3c127f5a6d",
+        "type": "debug",
+        "z": "202976c241e2145d",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "4e71900c4c82b0c6",
+        "type": "openweathermap",
+        "z": "202976c241e2145d",
+        "name": "",
+        "wtype": "current",
+        "lon": "101.153900",
+        "lat": "4.309170",
+        "city": "",
+        "country": "",
+        "language": "en",
+        "x": 410,
+        "y": 1480,
+        "wires": [
+            [
+                "e49e01809e07688a",
+                "17120d6996375b68",
+                "ab191041f4c0fa3e",
+                "a534c945acc4629a",
+                "d88a9d501cb99469",
+                "20279fc599e16127",
+                "cba915f5431a6376"
+            ]
+        ]
+    },
+    {
+        "id": "1e70a246bea74795",
+        "type": "inject",
+        "z": "202976c241e2145d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 1480,
+        "wires": [
+            [
+                "4e71900c4c82b0c6"
+            ]
+        ]
+    },
+    {
+        "id": "e49e01809e07688a",
+        "type": "debug",
+        "z": "202976c241e2145d",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "17120d6996375b68",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "weather",
+        "func": "msg.payload = \"Weather : \" + msg.payload.weather ;\nmsg.topic = \"weather\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1400,
+        "wires": [
+            [
+                "f84968f8da3042f7"
+            ]
+        ]
+    },
+    {
+        "id": "ab191041f4c0fa3e",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "temperature",
+        "func": "msg.payload = \"Temperature : \" + msg.payload.tempc + \"°C\";\nmsg.topic = \"temperature\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 1440,
+        "wires": [
+            [
+                "f84968f8da3042f7"
+            ]
+        ]
+    },
+    {
+        "id": "a534c945acc4629a",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "humidity",
+        "func": "msg.payload = \"Humidity : \" + msg.payload.humidity+ \"%\";\nmsg.topic = \"humidity\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1480,
+        "wires": [
+            [
+                "f84968f8da3042f7"
+            ]
+        ]
+    },
+    {
+        "id": "d88a9d501cb99469",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "location",
+        "func": "msg.payload = \"Location : \" + msg.payload.location;\nmsg.topic = \"location\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1560,
+        "wires": [
+            [
+                "f84968f8da3042f7"
+            ]
+        ]
+    },
+    {
+        "id": "20279fc599e16127",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "pressure",
+        "func": "msg.payload = \"Pressure : \" + msg.payload.pressure + \"Pa\";\nmsg.topic = \"pressure\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1520,
+        "wires": [
+            [
+                "f84968f8da3042f7"
+            ]
+        ]
+    },
+    {
+        "id": "d4fda6ddf8b36825",
+        "type": "debug",
+        "z": "202976c241e2145d",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "f84968f8da3042f7",
+        "type": "join",
+        "z": "202976c241e2145d",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "6",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1090,
+        "y": 1500,
+        "wires": [
+            [
+                "d4fda6ddf8b36825",
+                "a4eb154e2d033871"
+            ]
+        ]
+    },
+    {
+        "id": "f25225d5781bfd6e",
+        "type": "comment",
+        "z": "202976c241e2145d",
+        "name": "Getting data from influxDB",
+        "info": "",
+        "x": 170,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3af46546254aed5e",
+        "type": "influxdb in",
+        "z": "202976c241e2145d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Last Value (Humidity)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -1h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"humidity\"\n  )\n  |> last(column: \"_time\")\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 600,
+        "y": 180,
+        "wires": [
+            [
+                "ae4649183c8607b7"
+            ]
+        ]
+    },
+    {
+        "id": "ae4649183c8607b7",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "msg.payload = msg.payload[0]._value;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 180,
+        "wires": [
+            [
+                "e1f7f9e72ce8cf71"
+            ]
+        ]
+    },
+    {
+        "id": "cba915f5431a6376",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "time",
+        "func": "msg.payload = \"Time : \" + msg.time;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1600,
+        "wires": [
+            [
+                "f84968f8da3042f7"
+            ]
+        ]
+    },
+    {
+        "id": "97daadff65d838d6",
+        "type": "influxdb in",
+        "z": "202976c241e2145d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Last Value (Pressure)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -1h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"pressure\"\n  )\n  |> last(column: \"_time\")\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 600,
+        "y": 240,
+        "wires": [
+            [
+                "ec00594812b08765"
+            ]
+        ]
+    },
+    {
+        "id": "ec00594812b08765",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "msg.payload = msg.payload[0]._value;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 240,
+        "wires": [
+            [
+                "c98bda69adab165c"
+            ]
+        ]
+    },
+    {
+        "id": "1ee92bb2b76aac64",
+        "type": "influxdb in",
+        "z": "202976c241e2145d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Query-30m (Humidity)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -30m)\n  |> timeShift(duration: 8h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"humidity\"\n  )\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 600,
+        "y": 400,
+        "wires": [
+            [
+                "41fb06a47972d97f"
+            ]
+        ]
+    },
+    {
+        "id": "41fb06a47972d97f",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "let dataC = [[]];\nlet dataLabels = [];\n\nfor (let X in msg.payload) \n{\n    dataLabels[X] = msg.payload[X]._time;\n    dataC[0][X] = msg.payload[X]._value;\n}\n\nvar m={\n    \"series\":[\"Humidity\"],\n    \"data\":dataC,\n    \"labels\":dataLabels\n};\n\nreturn {payload:[m]};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 400,
+        "wires": [
+            [
+                "62325f195043b070"
+            ]
+        ]
+    },
+    {
+        "id": "bb42b39c27215427",
+        "type": "influxdb in",
+        "z": "202976c241e2145d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Query-30m (Pressure)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -30m)\n  |> timeShift(duration: 8h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"pressure\"\n  )\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 600,
+        "y": 460,
+        "wires": [
+            [
+                "b503d9db500012d8"
+            ]
+        ]
+    },
+    {
+        "id": "b503d9db500012d8",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "let dataC = [[]];\nlet dataLabels = [];\n\nfor (let X in msg.payload) \n{\n    dataLabels[X] = msg.payload[X]._time;\n    dataC[0][X] = msg.payload[X]._value;\n}\n\nvar m={\n    \"series\":[\"Pressure\"],\n    \"data\":dataC,\n    \"labels\":dataLabels\n};\n\nreturn {payload:[m]};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 460,
+        "wires": [
+            [
+                "0e04ea2e08667578"
+            ]
+        ]
+    },
+    {
+        "id": "e1f7f9e72ce8cf71",
+        "type": "ui_gauge",
+        "z": "202976c241e2145d",
+        "name": "Humidity Gauge",
+        "group": "2a361a2954052bee",
+        "order": 1,
+        "width": 7,
+        "height": 4,
+        "gtype": "donut",
+        "title": "Humidity",
+        "label": "Percentage (%)",
+        "format": "{{msg.payload}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#ffff00",
+            "#00ff00",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "60",
+        "className": "",
+        "x": 1120,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c98bda69adab165c",
+        "type": "ui_gauge",
+        "z": "202976c241e2145d",
+        "name": "Pressure Gauge",
+        "group": "ac070757315e3026",
+        "order": 1,
+        "width": 7,
+        "height": 4,
+        "gtype": "compass",
+        "title": "Atm.Pressure",
+        "label": "pascal (Pa)",
+        "format": "{{msg.payload}}",
+        "min": "260",
+        "max": "1260",
+        "colors": [
+            "#ffff00",
+            "#00ff00",
+            "#ca3838"
+        ],
+        "seg1": "900",
+        "seg2": "1100",
+        "className": "",
+        "x": 1120,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "961d84fe997d7e97",
+        "type": "ui_text",
+        "z": "202976c241e2145d",
+        "group": "31bcb4682d4c8ae2",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "Covid 19 status",
+        "label": "Covid-19 Status:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1220,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "27d1a2e9b4af5c30",
+        "type": "ui_clock",
+        "z": "202976c241e2145d",
+        "name": "Clock",
+        "group": "31bcb4682d4c8ae2",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "x": 410,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "49879db0fd83e7f3",
+        "type": "inject",
+        "z": "202976c241e2145d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 860,
+        "wires": [
+            [
+                "27d1a2e9b4af5c30",
+                "c46fb48e2301bb14"
+            ]
+        ]
+    },
+    {
+        "id": "a4eb154e2d033871",
+        "type": "ui_text",
+        "z": "202976c241e2145d",
+        "group": "31bcb4682d4c8ae2",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "Weather info",
+        "label": "Weather Info:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1310,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "924ee3ec0a930628",
+        "type": "ui_chart",
+        "z": "202976c241e2145d",
+        "name": "Temperature Line Chart",
+        "group": "b22d8c0afefe34ae",
+        "order": 2,
+        "width": 7,
+        "height": 6,
+        "label": "Temperature chart (Past 30 minutes)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62325f195043b070",
+        "type": "ui_chart",
+        "z": "202976c241e2145d",
+        "name": "Humidity Line Chart",
+        "group": "2a361a2954052bee",
+        "order": 2,
+        "width": 7,
+        "height": 6,
+        "label": "Humidity chart (Past 30 minutes)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#957f50",
+            "#b3c9e6",
+            "#4e3f32",
+            "#185318",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#3f2f4b"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1070,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0e04ea2e08667578",
+        "type": "ui_chart",
+        "z": "202976c241e2145d",
+        "name": "Pressure Line Chart",
+        "group": "ac070757315e3026",
+        "order": 2,
+        "width": 7,
+        "height": 6,
+        "label": "Pressure chart (Past 30 minutes)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#b04fa8",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#315d28",
+            "#b83d3d",
+            "#9c2826",
+            "#9467bd",
+            "#100b13"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1080,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c46fb48e2301bb14",
+        "type": "ui_text",
+        "z": "202976c241e2145d",
+        "group": "31bcb4682d4c8ae2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Clock:",
+        "format": "",
+        "layout": "col-center",
+        "className": "",
+        "x": 410,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "66c94328b7fa7ef6",
+        "type": "ui_switch",
+        "z": "202976c241e2145d",
+        "name": "",
+        "label": "Air Conditioner",
+        "tooltip": "",
+        "group": "2016e05cd883db43",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "02_on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "02_off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 200,
+        "y": 1820,
+        "wires": [
+            [
+                "a91111897141806f"
+            ]
+        ]
+    },
+    {
+        "id": "a91111897141806f",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\"+msg.payload+\"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1820,
+        "wires": [
+            [
+                "86d1e270dba98252"
+            ]
+        ]
+    },
+    {
+        "id": "104981bf246a0b82",
+        "type": "ui_switch",
+        "z": "202976c241e2145d",
+        "name": "",
+        "label": "Curtains",
+        "tooltip": "",
+        "group": "2016e05cd883db43",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "03_on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "03_off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 180,
+        "y": 1880,
+        "wires": [
+            [
+                "467468a5c09e521a"
+            ]
+        ]
+    },
+    {
+        "id": "467468a5c09e521a",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\"+msg.payload+\"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1880,
+        "wires": [
+            [
+                "86d1e270dba98252"
+            ]
+        ]
+    },
+    {
+        "id": "54dc50f7e6aad8bc",
+        "type": "ui_switch",
+        "z": "202976c241e2145d",
+        "name": "",
+        "label": "Projector",
+        "tooltip": "",
+        "group": "2016e05cd883db43",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "04_on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "04_off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 180,
+        "y": 1940,
+        "wires": [
+            [
+                "c4315c212d6443d7"
+            ]
+        ]
+    },
+    {
+        "id": "c4315c212d6443d7",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\"+msg.payload+\"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1940,
+        "wires": [
+            [
+                "86d1e270dba98252"
+            ]
+        ]
+    },
+    {
+        "id": "5882a14326bd9cfa",
+        "type": "ui_switch",
+        "z": "202976c241e2145d",
+        "name": "",
+        "label": "Coffee Machine",
+        "tooltip": "",
+        "group": "2016e05cd883db43",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "05_on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "05_off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 200,
+        "y": 2020,
+        "wires": [
+            [
+                "fe02d9c4e3b0c2ae"
+            ]
+        ]
+    },
+    {
+        "id": "fe02d9c4e3b0c2ae",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\"+msg.payload+\"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 2020,
+        "wires": [
+            [
+                "86d1e270dba98252"
+            ]
+        ]
+    },
+    {
+        "id": "33f01f6060a41e85",
+        "type": "ui_switch",
+        "z": "202976c241e2145d",
+        "name": "",
+        "label": "Robot Vacuums",
+        "tooltip": "",
+        "group": "2016e05cd883db43",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "06_on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "06_off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 200,
+        "y": 2100,
+        "wires": [
+            [
+                "74c29cf1d321afd9"
+            ]
+        ]
+    },
+    {
+        "id": "74c29cf1d321afd9",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\"+msg.payload+\"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 2100,
+        "wires": [
+            [
+                "86d1e270dba98252"
+            ]
+        ]
+    },
+    {
+        "id": "5dbfc50840737cec",
+        "type": "influxdb in",
+        "z": "202976c241e2145d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Query Descending (Humidity)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -5m)\n  |> timeShift(duration: 8h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"humidity\"\n  )\n  |> sort(columns: [\"_time\"], desc: true)\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 620,
+        "y": 640,
+        "wires": [
+            [
+                "649fdac2e6ed1906",
+                "080ef5d0361f8bdd"
+            ]
+        ]
+    },
+    {
+        "id": "649fdac2e6ed1906",
+        "type": "ui_table",
+        "z": "202976c241e2145d",
+        "group": "2a361a2954052bee",
+        "name": "Humidity Table (Desc Order)",
+        "order": 4,
+        "width": 7,
+        "height": 9,
+        "columns": [
+            {
+                "field": "_time",
+                "title": "Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "_value",
+                "title": "Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1000,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "0d1f72833bac6eec",
+        "type": "influxdb in",
+        "z": "202976c241e2145d",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Query Descending (Pressure)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -5m)\n  |> timeShift(duration: 8h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"pressure\"\n  )\n  |> sort(columns: [\"_time\"], desc: true)\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 620,
+        "y": 720,
+        "wires": [
+            [
+                "692f66387c6089d1",
+                "4f060d15a20d2423"
+            ]
+        ]
+    },
+    {
+        "id": "692f66387c6089d1",
+        "type": "ui_table",
+        "z": "202976c241e2145d",
+        "group": "ac070757315e3026",
+        "name": "PressureTable (Desc Order)",
+        "order": 4,
+        "width": 7,
+        "height": 10,
+        "columns": [
+            {
+                "field": "_time",
+                "title": "Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "_value",
+                "title": "Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1000,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "7cb59c90d839834c",
+        "type": "ui_button",
+        "z": "202976c241e2145d",
+        "name": "",
+        "group": "2016e05cd883db43",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Emergercy Button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 230,
+        "y": 3560,
+        "wires": [
+            [
+                "f246449fbba6d0fd",
+                "09f132de30019fbe",
+                "f85fca98897df3ab"
+            ]
+        ]
+    },
+    {
+        "id": "f246449fbba6d0fd",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Alarm system ",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"22_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 3480,
+        "wires": [
+            [
+                "60cd5e3b4f2a7f19"
+            ]
+        ]
+    },
+    {
+        "id": "09f132de30019fbe",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Door Lock",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"23_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 3560,
+        "wires": [
+            [
+                "60cd5e3b4f2a7f19"
+            ]
+        ]
+    },
+    {
+        "id": "f85fca98897df3ab",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Emergency Call",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"24_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 3640,
+        "wires": [
+            [
+                "60cd5e3b4f2a7f19"
+            ]
+        ]
+    },
+    {
+        "id": "60cd5e3b4f2a7f19",
+        "type": "json",
+        "z": "202976c241e2145d",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 790,
+        "y": 3560,
+        "wires": [
+            [
+                "300db7e0ee0edfa7",
+                "05fae2a7777f6ac4"
+            ]
+        ]
+    },
+    {
+        "id": "300db7e0ee0edfa7",
+        "type": "mqtt out",
+        "z": "202976c241e2145d",
+        "name": "",
+        "topic": "1903437/mypi/emergency",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "950a3ae9e9053409",
+        "x": 1030,
+        "y": 3560,
+        "wires": []
+    },
+    {
+        "id": "700a91c33cc1d8df",
+        "type": "ui_button",
+        "z": "202976c241e2145d",
+        "name": "",
+        "group": "2016e05cd883db43",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Turn On All In ONCE",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 2620,
+        "wires": [
+            [
+                "3f7a652c12b6f324",
+                "148e65bb7edfaa99",
+                "444bd2523a1cc739",
+                "1dcf873689cebed1",
+                "9cae98ec20d0a089",
+                "1a2629c939720c3b"
+            ]
+        ]
+    },
+    {
+        "id": "3f7a652c12b6f324",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Lights",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"07_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 2440,
+        "wires": [
+            [
+                "24125f0980b0a732"
+            ]
+        ]
+    },
+    {
+        "id": "148e65bb7edfaa99",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Air Conditioner",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"02_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 2520,
+        "wires": [
+            [
+                "24125f0980b0a732"
+            ]
+        ]
+    },
+    {
+        "id": "444bd2523a1cc739",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Curtains",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"03_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 2600,
+        "wires": [
+            [
+                "24125f0980b0a732"
+            ]
+        ]
+    },
+    {
+        "id": "24125f0980b0a732",
+        "type": "json",
+        "z": "202976c241e2145d",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 850,
+        "y": 2600,
+        "wires": [
+            [
+                "5541266f459c8dce",
+                "5c81919ef7c5528b"
+            ]
+        ]
+    },
+    {
+        "id": "5541266f459c8dce",
+        "type": "mqtt out",
+        "z": "202976c241e2145d",
+        "name": "",
+        "topic": "1903437/mypi/topic2",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "950a3ae9e9053409",
+        "x": 1120,
+        "y": 2820,
+        "wires": []
+    },
+    {
+        "id": "1dcf873689cebed1",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Projector",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"04_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 2660,
+        "wires": [
+            [
+                "24125f0980b0a732"
+            ]
+        ]
+    },
+    {
+        "id": "9cae98ec20d0a089",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Coffee Machine",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"05_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 2740,
+        "wires": [
+            [
+                "24125f0980b0a732"
+            ]
+        ]
+    },
+    {
+        "id": "1a2629c939720c3b",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Robot Vacuums",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"06_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 2820,
+        "wires": [
+            [
+                "24125f0980b0a732"
+            ]
+        ]
+    },
+    {
+        "id": "5c81919ef7c5528b",
+        "type": "debug",
+        "z": "202976c241e2145d",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 2420,
+        "wires": []
+    },
+    {
+        "id": "05fae2a7777f6ac4",
+        "type": "debug",
+        "z": "202976c241e2145d",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 3460,
+        "wires": []
+    },
+    {
+        "id": "b08ecaddc2e3ada8",
+        "type": "ui_button",
+        "z": "202976c241e2145d",
+        "name": "",
+        "group": "2016e05cd883db43",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Turn Off All In ONCE",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 3120,
+        "wires": [
+            [
+                "37ca8be179167521",
+                "e9407c619eb08603",
+                "cb793f32420aca13",
+                "58df9c5c72c22c08",
+                "98a67a5678c4a540",
+                "d2995c3df1feca19"
+            ]
+        ]
+    },
+    {
+        "id": "37ca8be179167521",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Lights",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"07_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 2940,
+        "wires": [
+            [
+                "b934afb5fa02643e"
+            ]
+        ]
+    },
+    {
+        "id": "e9407c619eb08603",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Air Conditioner",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"02_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 3020,
+        "wires": [
+            [
+                "b934afb5fa02643e"
+            ]
+        ]
+    },
+    {
+        "id": "cb793f32420aca13",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Curtains",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"03_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 3100,
+        "wires": [
+            [
+                "b934afb5fa02643e"
+            ]
+        ]
+    },
+    {
+        "id": "58df9c5c72c22c08",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Projector",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"04_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 3160,
+        "wires": [
+            [
+                "b934afb5fa02643e"
+            ]
+        ]
+    },
+    {
+        "id": "98a67a5678c4a540",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Coffee Machine",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"05_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 3240,
+        "wires": [
+            [
+                "b934afb5fa02643e"
+            ]
+        ]
+    },
+    {
+        "id": "d2995c3df1feca19",
+        "type": "function",
+        "z": "202976c241e2145d",
+        "name": "Robot Vacuums",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"06_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 3320,
+        "wires": [
+            [
+                "b934afb5fa02643e"
+            ]
+        ]
+    },
+    {
+        "id": "b934afb5fa02643e",
+        "type": "json",
+        "z": "202976c241e2145d",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 790,
+        "y": 3080,
+        "wires": [
+            [
+                "5541266f459c8dce"
+            ]
+        ]
+    },
+    {
+        "id": "559f8cfdc7f6a9ec",
+        "type": "ui_text",
+        "z": "202976c241e2145d",
+        "group": "b22d8c0afefe34ae",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperature Table",
+        "format": "",
+        "layout": "row-left",
+        "className": "",
+        "x": 970,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "080ef5d0361f8bdd",
+        "type": "ui_text",
+        "z": "202976c241e2145d",
+        "group": "2a361a2954052bee",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Humidity Table",
+        "format": "",
+        "layout": "row-left",
+        "className": "",
+        "x": 960,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "4f060d15a20d2423",
+        "type": "ui_text",
+        "z": "202976c241e2145d",
+        "group": "ac070757315e3026",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Pressure Table",
+        "format": "",
+        "layout": "row-left",
+        "className": "",
+        "x": 960,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "bf5adccaa69b49ec",
+        "type": "telegram receiver",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "bot": "0810aaf6878e53a7",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 210,
+        "y": 480,
+        "wires": [
+            [
+                "a6be2314ac2ae1dc",
+                "0cc438c944776c62"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4470f644c5f3dff2",
+        "type": "telegram sender",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "bot": "0810aaf6878e53a7",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 2090,
+        "y": 280,
+        "wires": [
+            [
+                "257c129c57cff151"
+            ]
+        ]
+    },
+    {
+        "id": "257c129c57cff151",
+        "type": "debug",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2250,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a6be2314ac2ae1dc",
+        "type": "switch",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload.content",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/start",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/help",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/getdata",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/getcovid",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/turnonall",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/turnoffall",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/sos",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 7,
+        "x": 490,
+        "y": 540,
+        "wires": [
+            [
+                "80d75f7fd47eeb89"
+            ],
+            [
+                "ec8c8f975556e62d"
+            ],
+            [
+                "e3919ed8b9461ffa",
+                "7ec08eabab3d2e63",
+                "ab9be5e8213d7650"
+            ],
+            [
+                "81c76a64043a35f1"
+            ],
+            [
+                "fb9751148d8b651a",
+                "d4dde5e6df32b543",
+                "1bd3d8fd349b251d",
+                "b0db72c64e31d809",
+                "79798331e61023f9",
+                "7ea1cfb716224711",
+                "24d05476ce989343"
+            ],
+            [
+                "5a83bc81a381e959",
+                "6ae786401080d247",
+                "7040381686a3955b",
+                "b6c0d2a423eb29bc",
+                "6aff4c64e49bc346",
+                "cffc62d4854389b8",
+                "b9319fc85f12d3eb"
+            ],
+            [
+                "70c0f7c107651d39",
+                "7c4aec6fe9528b6b",
+                "c29343d6964fcb64",
+                "5e2fa92eed638409"
+            ]
+        ]
+    },
+    {
+        "id": "0cc438c944776c62",
+        "type": "debug",
+        "z": "96192caac7bb71e0",
+        "name": "telegram debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "222c457769188f17",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "func": "msg.payload = \"Temperature : \" + msg.payload[0]._value + \"°C\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 260,
+        "wires": [
+            [
+                "687a5df3a7f0a8d2"
+            ]
+        ]
+    },
+    {
+        "id": "e3919ed8b9461ffa",
+        "type": "influxdb in",
+        "z": "96192caac7bb71e0",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Last Value (Temperature)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -1h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"temperature\"\n  )\n  |> last(column: \"_time\")\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 850,
+        "y": 260,
+        "wires": [
+            [
+                "222c457769188f17"
+            ]
+        ]
+    },
+    {
+        "id": "7ec08eabab3d2e63",
+        "type": "influxdb in",
+        "z": "96192caac7bb71e0",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Last Value (Humidity)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -1h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"humidity\"\n  )\n  |> last(column: \"_time\")\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 840,
+        "y": 320,
+        "wires": [
+            [
+                "bc51b153147582fe"
+            ]
+        ]
+    },
+    {
+        "id": "ab9be5e8213d7650",
+        "type": "influxdb in",
+        "z": "96192caac7bb71e0",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Last Value (Pressure)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -1h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"pressure\"\n  )\n  |> last(column: \"_time\")\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 840,
+        "y": 380,
+        "wires": [
+            [
+                "4e10253830dc92ab"
+            ]
+        ]
+    },
+    {
+        "id": "4e10253830dc92ab",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "func": "msg.payload = \"Pressure: \" + msg.payload[0]._value+\"Pa\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 380,
+        "wires": [
+            [
+                "687a5df3a7f0a8d2"
+            ]
+        ]
+    },
+    {
+        "id": "bc51b153147582fe",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "func": "msg.payload = \"Humidity: \" + msg.payload[0]._value +\"%\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 320,
+        "wires": [
+            [
+                "687a5df3a7f0a8d2"
+            ]
+        ]
+    },
+    {
+        "id": "687a5df3a7f0a8d2",
+        "type": "join",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1290,
+        "y": 320,
+        "wires": [
+            [
+                "176838abe9f447b5",
+                "c2411556c0fbf6d4"
+            ]
+        ]
+    },
+    {
+        "id": "176838abe9f447b5",
+        "type": "debug",
+        "z": "96192caac7bb71e0",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "c2411556c0fbf6d4",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "environmental data",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"Environmental data in office:\\n\"+msg.payload\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1590,
+        "y": 320,
+        "wires": [
+            [
+                "5fb40df67f500302",
+                "4470f644c5f3dff2"
+            ]
+        ]
+    },
+    {
+        "id": "5fb40df67f500302",
+        "type": "debug",
+        "z": "96192caac7bb71e0",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1560,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "81c76a64043a35f1",
+        "type": "http request",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.worldometers.info/coronavirus/country/malaysia/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 770,
+        "y": 480,
+        "wires": [
+            [
+                "7db828304f680c52",
+                "d1f357e8e196cbee",
+                "df85b18327f04c19"
+            ]
+        ]
+    },
+    {
+        "id": "7db828304f680c52",
+        "type": "html",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload",
+        "outproperty": "payload",
+        "tag": "title",
+        "ret": "text",
+        "as": "single",
+        "x": 990,
+        "y": 460,
+        "wires": [
+            [
+                "a46f9785acdcd70a"
+            ]
+        ]
+    },
+    {
+        "id": "d1f357e8e196cbee",
+        "type": "html",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload",
+        "outproperty": "payload",
+        "tag": "div>h4",
+        "ret": "html",
+        "as": "single",
+        "x": 990,
+        "y": 500,
+        "wires": [
+            [
+                "a46f9785acdcd70a"
+            ]
+        ]
+    },
+    {
+        "id": "df85b18327f04c19",
+        "type": "html",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload",
+        "outproperty": "payload",
+        "tag": "ul>li>strong",
+        "ret": "html",
+        "as": "single",
+        "x": 1010,
+        "y": 540,
+        "wires": [
+            [
+                "a46f9785acdcd70a"
+            ]
+        ]
+    },
+    {
+        "id": "a46f9785acdcd70a",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "function 3",
+        "func": "msg.payload = msg.payload[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 500,
+        "wires": [
+            [
+                "17f16a6f5bc7b4d1"
+            ]
+        ]
+    },
+    {
+        "id": "17f16a6f5bc7b4d1",
+        "type": "join",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1410,
+        "y": 500,
+        "wires": [
+            [
+                "42f6d439f61c3d49",
+                "87156133b59ceb31"
+            ]
+        ]
+    },
+    {
+        "id": "42f6d439f61c3d49",
+        "type": "debug",
+        "z": "96192caac7bb71e0",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "87156133b59ceb31",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "covid info",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: msg.payload\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 500,
+        "wires": [
+            [
+                "4470f644c5f3dff2"
+            ]
+        ]
+    },
+    {
+        "id": "57d134c99e75af40",
+        "type": "inject",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1820,
+        "wires": [
+            [
+                "22b22f30c6585b63",
+                "308548cea618aa57",
+                "28fbc5674e5c77c9"
+            ]
+        ]
+    },
+    {
+        "id": "22b22f30c6585b63",
+        "type": "influxdb in",
+        "z": "96192caac7bb71e0",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Last Value (Temperature)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -1h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"temperature\"\n  )\n  |> last(column: \"_time\")\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 530,
+        "y": 1720,
+        "wires": [
+            [
+                "8373d34945f47b97"
+            ]
+        ]
+    },
+    {
+        "id": "8373d34945f47b97",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "func": "msg.payload = msg.payload[0]._value;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 1720,
+        "wires": [
+            [
+                "f585fed8b9940dbe"
+            ]
+        ]
+    },
+    {
+        "id": "308548cea618aa57",
+        "type": "influxdb in",
+        "z": "96192caac7bb71e0",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Last Value (Humidity)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -1h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"humidity\"\n  )\n  |> last(column: \"_time\")\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 540,
+        "y": 1820,
+        "wires": [
+            [
+                "7097b658d13a03e5"
+            ]
+        ]
+    },
+    {
+        "id": "7097b658d13a03e5",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "func": "msg.payload = msg.payload[0]._value;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 1820,
+        "wires": [
+            [
+                "8929d0dc13714739"
+            ]
+        ]
+    },
+    {
+        "id": "28fbc5674e5c77c9",
+        "type": "influxdb in",
+        "z": "96192caac7bb71e0",
+        "influxdb": "595fcb68b4e07c2e",
+        "name": "DB - Last Value (Pressure)",
+        "query": "data = from(bucket: \"db01\")\n  |> range(start: -1h)\n  |> filter(fn: (r) =>\n    r._measurement == \"location=office\" and\n    r._field == \"pressure\"\n  )\n  |> last(column: \"_time\")\n  |> yield()\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "FICT",
+        "x": 540,
+        "y": 1920,
+        "wires": [
+            [
+                "45bcf7f6490c8ec3"
+            ]
+        ]
+    },
+    {
+        "id": "45bcf7f6490c8ec3",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "func": "msg.payload = msg.payload[0]._value;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 1920,
+        "wires": [
+            [
+                "b1e662f24dc4d9dd"
+            ]
+        ]
+    },
+    {
+        "id": "f585fed8b9940dbe",
+        "type": "switch",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "30",
+                "vt": "str"
+            },
+            {
+                "t": "btwn",
+                "v": "30",
+                "vt": "num",
+                "v2": "60",
+                "v2t": "num"
+            },
+            {
+                "t": "gt",
+                "v": "60",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 950,
+        "y": 1720,
+        "wires": [
+            [
+                "84ee612695337517"
+            ],
+            [],
+            [
+                "c2bfb99ac4c3c2a4"
+            ]
+        ]
+    },
+    {
+        "id": "c2bfb99ac4c3c2a4",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "High Temp warning",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"Temperature is too HIGH\\n\"+\n        \"Current Temp: \" + msg.payload +\" °C\"\n};\nmsg.payload.options = {parse_mode:\"Markdown\"};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 1740,
+        "wires": [
+            [
+                "b8442a82be709038"
+            ]
+        ]
+    },
+    {
+        "id": "8929d0dc13714739",
+        "type": "switch",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "20",
+                "vt": "str"
+            },
+            {
+                "t": "btwn",
+                "v": "20",
+                "vt": "num",
+                "v2": "60",
+                "v2t": "num"
+            },
+            {
+                "t": "gt",
+                "v": "70",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 950,
+        "y": 1820,
+        "wires": [
+            [
+                "e4f5cc6464855360"
+            ],
+            [],
+            [
+                "a6132ac7905a4d8e"
+            ]
+        ]
+    },
+    {
+        "id": "a6132ac7905a4d8e",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "High humi warning",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"Humidity is too HIGH\\n\"+\n        \"Current Humi: \" + msg.payload +\" %\"\n};\nmsg.payload.options = {parse_mode:\"Markdown\"};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 1860,
+        "wires": [
+            [
+                "b8442a82be709038"
+            ]
+        ]
+    },
+    {
+        "id": "b1e662f24dc4d9dd",
+        "type": "switch",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "900",
+                "vt": "str"
+            },
+            {
+                "t": "btwn",
+                "v": "900",
+                "vt": "num",
+                "v2": "1100",
+                "v2t": "num"
+            },
+            {
+                "t": "gt",
+                "v": "1100",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 950,
+        "y": 1920,
+        "wires": [
+            [
+                "8e58d447e399ed9c"
+            ],
+            [],
+            [
+                "701e784b6c048dbd"
+            ]
+        ]
+    },
+    {
+        "id": "701e784b6c048dbd",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "High pres warning",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"Pressure is too HIGH\\n\"+\n        \"Current Pres : \" + msg.payload +\" Pa\"\n};\nmsg.payload.options = {parse_mode:\"Markdown\"};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 1980,
+        "wires": [
+            [
+                "b8442a82be709038"
+            ]
+        ]
+    },
+    {
+        "id": "ec8c8f975556e62d",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "/help, display available commands",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content:\"Welcome to Smart Office Telegram :)\"+\n            \"Available commands:\\n\"+\n            \"/getdata : gets office's environmental data\\n\" +\n            \"/getcovid: gets latest covid-19 status\\n\"+\n            \"/turnonall: turn on all appliances\\n\"+\n            \"/turnoffall: turn off all appliances\\n\" +\n            \"/sos : Enters emergency State\"  \n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 160,
+        "wires": [
+            [
+                "4470f644c5f3dff2"
+            ]
+        ]
+    },
+    {
+        "id": "80d75f7fd47eeb89",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "/start, display tooltip",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"Type /help to get more info\"\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 80,
+        "wires": [
+            [
+                "4470f644c5f3dff2"
+            ]
+        ]
+    },
+    {
+        "id": "b8442a82be709038",
+        "type": "telegram sender",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "bot": "0810aaf6878e53a7",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1590,
+        "y": 1800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84ee612695337517",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Low temp warning",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"Temperature is too LOW\\n\"+\n        \"Current Temp: \" + msg.payload +\" °C\"\n};\nmsg.payload.options = {parse_mode:\"Markdown\"};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 1680,
+        "wires": [
+            [
+                "b8442a82be709038"
+            ]
+        ]
+    },
+    {
+        "id": "e4f5cc6464855360",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Low humi warning",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"Humidity is too LOW\\n\"+\n        \"Current Humi: \" + msg.payload +\" %\"\n};\nmsg.payload.options = {parse_mode:\"Markdown\"};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 1800,
+        "wires": [
+            [
+                "b8442a82be709038"
+            ]
+        ]
+    },
+    {
+        "id": "8e58d447e399ed9c",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Low pres warning",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"Pressure is too LOW\\n\"+\n        \"Current Pres : \" + msg.payload +\" Pa\"\n};\nmsg.payload.options = {parse_mode:\"Markdown\"};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 1920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fb9751148d8b651a",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Lights",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"07_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 660,
+        "wires": [
+            [
+                "a8815cea97544c49"
+            ]
+        ]
+    },
+    {
+        "id": "d4dde5e6df32b543",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Air Conditioner",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"02_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 700,
+        "wires": [
+            [
+                "a8815cea97544c49"
+            ]
+        ]
+    },
+    {
+        "id": "1bd3d8fd349b251d",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Curtains",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"03_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 740,
+        "wires": [
+            [
+                "a8815cea97544c49"
+            ]
+        ]
+    },
+    {
+        "id": "a8815cea97544c49",
+        "type": "json",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 1230,
+        "y": 760,
+        "wires": [
+            [
+                "faf061ca2e3ef25f",
+                "b3f83a0c4de8f4a4"
+            ]
+        ]
+    },
+    {
+        "id": "faf061ca2e3ef25f",
+        "type": "mqtt out",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "topic": "1903437/mypi/topic2",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "950a3ae9e9053409",
+        "x": 1560,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "b0db72c64e31d809",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Projector",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"04_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 780,
+        "wires": [
+            [
+                "a8815cea97544c49"
+            ]
+        ]
+    },
+    {
+        "id": "79798331e61023f9",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Coffee Machine",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"05_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 820,
+        "wires": [
+            [
+                "a8815cea97544c49"
+            ]
+        ]
+    },
+    {
+        "id": "7ea1cfb716224711",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Robot Vacuums",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"06_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 860,
+        "wires": [
+            [
+                "a8815cea97544c49"
+            ]
+        ]
+    },
+    {
+        "id": "b3f83a0c4de8f4a4",
+        "type": "debug",
+        "z": "96192caac7bb71e0",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1400,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "5a83bc81a381e959",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Lights",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"07_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 960,
+        "wires": [
+            [
+                "067e27448e463dc1"
+            ]
+        ]
+    },
+    {
+        "id": "6ae786401080d247",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Air Conditioner",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"02_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1000,
+        "wires": [
+            [
+                "067e27448e463dc1"
+            ]
+        ]
+    },
+    {
+        "id": "7040381686a3955b",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Curtains",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"03_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 1040,
+        "wires": [
+            [
+                "067e27448e463dc1"
+            ]
+        ]
+    },
+    {
+        "id": "b6c0d2a423eb29bc",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Projector",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"04_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 1080,
+        "wires": [
+            [
+                "067e27448e463dc1"
+            ]
+        ]
+    },
+    {
+        "id": "6aff4c64e49bc346",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Coffee Machine",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"05_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1120,
+        "wires": [
+            [
+                "067e27448e463dc1"
+            ]
+        ]
+    },
+    {
+        "id": "cffc62d4854389b8",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Robot Vacuums",
+        "func": "msg.payload = \"{\\\"act\\\":\\\"\" + \"06_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1160,
+        "wires": [
+            [
+                "067e27448e463dc1"
+            ]
+        ]
+    },
+    {
+        "id": "067e27448e463dc1",
+        "type": "json",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 1250,
+        "y": 1020,
+        "wires": [
+            [
+                "faf061ca2e3ef25f"
+            ]
+        ]
+    },
+    {
+        "id": "24d05476ce989343",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Status: Turned ON all",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"System: Turned ON all appliances\"\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1600,
+        "y": 680,
+        "wires": [
+            [
+                "4470f644c5f3dff2"
+            ]
+        ]
+    },
+    {
+        "id": "b9319fc85f12d3eb",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Status: Turned OFF all",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"System: Turned OFF all appliances\"\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 1000,
+        "wires": [
+            [
+                "4470f644c5f3dff2"
+            ]
+        ]
+    },
+    {
+        "id": "70c0f7c107651d39",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Alarm system ",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"22_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1280,
+        "wires": [
+            [
+                "4248ad1e32050d83"
+            ]
+        ]
+    },
+    {
+        "id": "051bd8505eb62ba1",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Door Lock",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"23_off\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 1440,
+        "wires": [
+            [
+                "4248ad1e32050d83"
+            ]
+        ]
+    },
+    {
+        "id": "7c4aec6fe9528b6b",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Emergency Call",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"24_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1360,
+        "wires": [
+            [
+                "4248ad1e32050d83"
+            ]
+        ]
+    },
+    {
+        "id": "4248ad1e32050d83",
+        "type": "json",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 1230,
+        "y": 1320,
+        "wires": [
+            [
+                "14ab58314cbb43a0",
+                "9d25fa7881bfecc1"
+            ]
+        ]
+    },
+    {
+        "id": "14ab58314cbb43a0",
+        "type": "mqtt out",
+        "z": "96192caac7bb71e0",
+        "name": "",
+        "topic": "1903437/mypi/emergency",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "950a3ae9e9053409",
+        "x": 1530,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "9d25fa7881bfecc1",
+        "type": "debug",
+        "z": "96192caac7bb71e0",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1500,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "e04a4607b61d57b5",
+        "type": "inject",
+        "z": "96192caac7bb71e0",
+        "name": "Intruder ",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 330,
+        "y": 1280,
+        "wires": [
+            [
+                "b7a2c4281b9da912"
+            ]
+        ]
+    },
+    {
+        "id": "b7a2c4281b9da912",
+        "type": "switch",
+        "z": "96192caac7bb71e0",
+        "name": "Security camera",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 560,
+        "y": 1280,
+        "wires": [
+            [
+                "70c0f7c107651d39",
+                "051bd8505eb62ba1",
+                "7c4aec6fe9528b6b",
+                "1a176296e0379c44"
+            ]
+        ]
+    },
+    {
+        "id": "1a176296e0379c44",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Status: Intruders detected on camera",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"System: Intruders detected\\n\"+\n        \"Entering emergency state...\\n\" +\n        \"All doors will be locked\\n\"\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1480,
+        "wires": [
+            [
+                "4470f644c5f3dff2"
+            ]
+        ]
+    },
+    {
+        "id": "c29343d6964fcb64",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Status: /sos on telegram",
+        "func": "msg.payload = {\n    chatId: 1743747225,\n    type: \"message\",\n    content: \"System: SOS signal from telegram\\n\"+\n             \"Entering emergency state\\n\"+\n             \"All emergency doors in this building will be opened\\n\"\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 1200,
+        "wires": [
+            [
+                "4470f644c5f3dff2"
+            ]
+        ]
+    },
+    {
+        "id": "5e2fa92eed638409",
+        "type": "function",
+        "z": "96192caac7bb71e0",
+        "name": "Door Open",
+        "func": "\nmsg.payload = \"{\\\"act\\\":\\\"\" + \"23_on\" + \"\\\"}\";\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    }
+]
